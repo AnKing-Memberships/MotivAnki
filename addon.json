@@ -1,0 +1,14 @@
+{
+    "display_name": "MotivAnki",
+    "module_name": "motivanki",
+    "repo_name": "motivanki",
+    "ankiweb_id": "663438166",
+    "author": "The AnKing",
+    "conflicts": [],
+    "targets": [
+        "anki21"
+    ],
+    "min_anki_version": "2.1.22",
+    "max_tested_anki_version": "2.1.50",
+    "ankiweb_conflicts_with_local": false
+}
