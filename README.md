@@ -4,7 +4,7 @@
 You must be on Anki > 2.1.22 to use this add-on
 
 ## How to Use
-***
+The config of this addon lets you add one or many quotes to the home screen and they will randomize each time the home screen refreshes. You can change color, font, etc from the config as well
 
 ## Screenshots
 <img src="https://raw.githubusercontent.com/AnKingMed/ankiweb-placeholder/master/screenshots/Motivanki.jpg?raw=content">
@@ -15,7 +15,7 @@ If you find a serious bug, please submit it on <a href="https://github.com/ankip
 
 ## Changelog:
   <br>
-2021-*****: Initial Release
+2022-06-23 Initial Release
 
 
 ### If you like these, please consider donating to this project
