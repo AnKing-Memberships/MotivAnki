@@ -18,6 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import random
+import time
 from pathlib import Path
 
 from aqt import mw
@@ -27,13 +28,21 @@ from .config import gc
 
 ADDON_DIR_PATH = Path(__file__).parent
 
-
 def add_new_count_to_bottom(dbinstance, content):
     COLOR = gc("font color", "Red")
     FAMILY = gc("font family", "Times")
     SIZE = gc("font size", "12px")
     QUOTE_LIST = gc("quote")
-    QUOTE = random.choice(QUOTE_LIST)
+
+    update_daily = gc("update daily", False)
+    if update_daily:
+        day = int(time.time() // 86400)
+        # the seed for the Random object will be different every day
+        daily_random = random.Random(day)
+        QUOTE = QUOTE_LIST[daily_random.randint(0, len(QUOTE_LIST)-1)]
+    else:
+        QUOTE = random.choice(QUOTE_LIST)
+
     add_this = f"""<div style='color:{COLOR}; font-size:{SIZE}; font-family:{FAMILY};'>
     <br>{QUOTE}<br></div>"""
     content.stats += add_this

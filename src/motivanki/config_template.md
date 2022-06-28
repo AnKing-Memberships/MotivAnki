@@ -19,4 +19,8 @@
 <hr>
 
 - **Quote:** Type your quotes here using html style. For example, if you want to add a line break, use "&lt;br&gt;"
-  - You can add as many quotes as you want separated by commas and it will randomly shuffle through them every time you go back to the main screen
+  - You can add as many quotes as you want separated by commas and it will randomly select one every time you go back
+  to the main screen, or every day depending on **update daily**
+- **Update Daily:**
+  - false: the quote is randomly selected every time the main screen is refreshed
+  - true: the quote is randomly selected every day
