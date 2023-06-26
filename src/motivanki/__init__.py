@@ -17,6 +17,7 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+import os
 import random
 from pathlib import Path
 
@@ -51,15 +52,20 @@ def apply_config_changes(config):
 mw.addonManager.setConfigUpdatedAction(__name__, apply_config_changes)
 
 
-# needed so that it works if installed from AnkiWeb or not
-def generate_config_md_from_template():
-    with open(ADDON_DIR_PATH / "config_template.md", "r") as f:
-        template = f.read()
+def replace_module_name_in_config_help():
+    """Replace static add-on module name in config.md with the actual name"""
 
-    result = template.replace("ADDON_DIR_NAME", ADDON_DIR_PATH.name)
+    path = os.path.join(mw.addonManager.addonsFolder(
+        mw.addonManager.addonFromModule(__name__)), "config.md")
+    with open(path, encoding="utf-8") as f:
+        contents = f.read()
+        contents = contents.replace(
+            "/_addons/663438166", f"/_addons/{mw.addonManager.addonFromModule(__name__)}")
+        return contents
 
-    with open(ADDON_DIR_PATH / "config.md", "w") as f:
-        f.write(result)
 
-
-generate_config_md_from_template()
+# Make images available to the config help webview
+mw.addonManager.setWebExports(__name__, r"resources/.*")
+if hasattr(mw.addonManager, 'set_config_help_action'):
+    mw.addonManager.set_config_help_action(mw.addonManager.addonFromModule(
+        __name__), replace_module_name_in_config_help)
