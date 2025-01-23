@@ -1,4 +1,4 @@
-<center><div style="vertical-align:middle;"> <a href="https://www.ankingmed.com"> <img src="/_addons/663438166/resources/AnKingSmall.png"> </a> <a href="https://www.ankingmed.com"> <img src="/_addons/663438166/resources/TheAnKing.png"> </a> </div></center>
+<center><div style="vertical-align:middle;"><a href="https://www.theanking.com"><img src="/_addons/663438166/resources/TheAnKing.png"></a></div></center>
 
 <center> <a href="https://www.facebook.com/ankingmed"> <img src="/_addons/663438166/resources/Facebook.jpg"> </a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
